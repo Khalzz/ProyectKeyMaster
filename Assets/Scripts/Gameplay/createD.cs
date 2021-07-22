@@ -6,12 +6,15 @@ public class createD : MonoBehaviour
 {
     public GameObject dPrefab;
 
-    void Start()
-    {
-        Instantiate(dPrefab, transform.position, Quaternion.identity);
-    }
-
     void Update()
     {
+        foreach(int i in LevelSongs.dNotes)
+        {
+            if (i - 130 == Controllers.fixedTimer)
+            {
+                Instantiate(dPrefab, transform.position, Quaternion.identity);
+                Debug.Log("se ha creado un prefab");
+            }
+        }
     }
 }

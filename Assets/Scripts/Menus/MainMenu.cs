@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    string levelName;
+    static public string levelName;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,12 @@ public class MainMenu : MonoBehaviour
     public void test()
     {
         levelName = "Test";
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void test2()
+    {
+        levelName = "Test 2";
         SceneManager.LoadScene(levelName);
     }
 }

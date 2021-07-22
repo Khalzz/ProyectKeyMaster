@@ -5,26 +5,33 @@ using UnityEngine;
 public class kNote : MonoBehaviour
 {
     public bool kState;
+    static public bool kFire;
+    static public bool pointState;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pointState = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        gameObject.transform.Translate(0,-10f * Time.deltaTime,0);
         if(Input.GetButtonDown("K") && kState )
         {
+            pointState = true;
             this.gameObject.SetActive(false);
         }
     }
+
     void OnTriggerStay2D(Collider2D other) 
     {
         kState = true;
+        kFire = true;
     }
     void OnTriggerExit2D(Collider2D other)
     {
+        kFire = false;
         kState = false;
     }
 }

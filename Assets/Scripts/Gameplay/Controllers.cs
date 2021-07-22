@@ -4,24 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
-using System.Collections.Generic;
 
 public class Controllers : MonoBehaviour
 {
     // notes
-    List<float> dNotes = new List<float>();
+    List<int> dNotes = new List<int>();
     public string dN;
 
-    List<float> fNotes = new List<float>();
+    List<int> fNotes = new List<int>();
     public string fN;
     
-    List<float> spaceNotes = new List<float>();
+    List<int> spaceNotes = new List<int>();
     public string spaceN;
 
-    List<float> jNotes = new List<float>();
+    List<int> jNotes = new List<int>();
     public string jN;
 
-    List<float> kNotes = new List<float>();
+    List<int> kNotes = new List<int>();
     public string kN;
     //notes
 
@@ -29,7 +28,8 @@ public class Controllers : MonoBehaviour
     public GameObject dFire, fFire, spaceFire, jFire, kFire;
 
     // in game timer
-    public float timer;
+    public double timer;
+    static public int fixedTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -46,16 +46,22 @@ public class Controllers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += (1 * Time.deltaTime) * 10;
+        timer +=(1 * Time.deltaTime) * 100;
+        fixedTimer = Convert.ToInt32(timer);
 
         if (Input.GetButtonDown("D"))
         {
             D.SetActive(false);
             Dpressed.SetActive(true);
             dFire.SetActive(false);
-            Debug.Log(timer);
-
-            dNotes.Add(timer);
+            Debug.Log(fixedTimer);
+            if (dNote.dFire == true)
+            {
+                D.SetActive(false);
+                Dpressed.SetActive(false);
+                dFire.SetActive(true);
+            } 
+            dNotes.Add(fixedTimer);
         }
         else if (Input.GetButtonUp("D"))
         {
@@ -69,9 +75,14 @@ public class Controllers : MonoBehaviour
             F.SetActive(false);
             Fpressed.SetActive(true);
             fFire.SetActive(false);
-            Debug.Log(timer);
-
-            fNotes.Add(timer);
+            Debug.Log(fixedTimer);
+            fNotes.Add(fixedTimer);
+            if (fNote.fFire == true)
+            {
+                F.SetActive(false);
+                Fpressed.SetActive(false);
+                fFire.SetActive(true);
+            } 
         }
         else if (Input.GetButtonUp("F"))
         {
@@ -85,9 +96,14 @@ public class Controllers : MonoBehaviour
             Space.SetActive(false);
             SpacePressed.SetActive(true);
             spaceFire.SetActive(false);
-            Debug.Log(timer);
-
-            spaceNotes.Add(timer);
+            Debug.Log(fixedTimer);
+            spaceNotes.Add(fixedTimer);
+            if (spaceNote.spaceFire == true)
+            {
+                Space.SetActive(false);
+                SpacePressed.SetActive(false);
+                spaceFire.SetActive(true);
+            } 
         }
         else if (Input.GetButtonUp("Space"))
         {
@@ -101,9 +117,14 @@ public class Controllers : MonoBehaviour
             J.SetActive(false);
             Jpressed.SetActive(true);
             jFire.SetActive(false);
-            Debug.Log(timer);
-
-            jNotes.Add(timer);
+            Debug.Log(fixedTimer);
+            jNotes.Add(fixedTimer);
+            if (jNote.jFire == true)
+            {
+                J.SetActive(false);
+                Jpressed.SetActive(false);
+                jFire.SetActive(true);
+            } 
         }
         else if (Input.GetButtonUp("J"))
         {
@@ -117,9 +138,14 @@ public class Controllers : MonoBehaviour
             K.SetActive(false);
             Kpressed.SetActive(true);
             kFire.SetActive(false);
-            Debug.Log(timer);
-
-            kNotes.Add(timer);
+            Debug.Log(fixedTimer);
+            kNotes.Add(fixedTimer);
+            if (kNote.kFire == true)
+            {
+                K.SetActive(false);
+                Kpressed.SetActive(false);
+                kFire.SetActive(true);
+            } 
         }
         else if (Input.GetButtonUp("K"))
         {
