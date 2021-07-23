@@ -15,7 +15,6 @@ public class createSpace : MonoBehaviour
             if (i - 130 == Controllers.fixedTimer)
             {
                 Instantiate(spacePrefab, transform.position, Quaternion.identity);
-                Debug.Log("se ha creado un prefab");
             }
         }
     }

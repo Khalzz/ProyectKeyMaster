@@ -13,7 +13,6 @@ public class createK : MonoBehaviour
             if (i - 130 == Controllers.fixedTimer)
             {
                 Instantiate(kPrefab, transform.position, Quaternion.identity);
-                Debug.Log("se ha creado un prefab");
             }
         }
     }

@@ -1,21 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Loose : MonoBehaviour
 {
-    public int count = 0;
+    public static int hitCount;
     public bool state;
-    public static bool looseState; 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public static bool looseState;
 
-    // Update is called once per frame
     void Update()
     {
+        hitCount = 0;
     }
 
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.tag == "Prefab") 
+        {
+            hitCount += 1;
+        }
+    }
+
+    void MinusOne()
+    {
+        looseState = false;
+        PointBar.points -= 1;
+    }
 
 }

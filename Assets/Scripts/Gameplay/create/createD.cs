@@ -13,7 +13,6 @@ public class createD : MonoBehaviour
             if (i - 130 == Controllers.fixedTimer)
             {
                 Instantiate(dPrefab, transform.position, Quaternion.identity);
-                Debug.Log("se ha creado un prefab");
             }
         }
     }

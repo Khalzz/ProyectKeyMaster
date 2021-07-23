@@ -7,6 +7,14 @@ using System.IO;
 
 public class Controllers : MonoBehaviour
 {
+    // hard notes 1
+    List<int> aNotes = new List<int>();
+    public string aN;
+
+    List<int> sNotes = new List<int>();
+    public string sN;
+    // hard notes 1
+
     // notes
     List<int> dNotes = new List<int>();
     public string dN;
@@ -22,10 +30,18 @@ public class Controllers : MonoBehaviour
 
     List<int> kNotes = new List<int>();
     public string kN;
-    //notes
+    //normal notes
 
-    public GameObject D,Dpressed, F,Fpressed, Space, SpacePressed, J, Jpressed, K, Kpressed;
-    public GameObject dFire, fFire, spaceFire, jFire, kFire;
+    // hard notes 1
+    List<int> lNotes = new List<int>();
+    public string lN;
+
+    List<int> nNotes = new List<int>();
+    public string nN;
+    // hard notes 1
+
+    public GameObject D,Dpressed, F,Fpressed, Space, SpacePressed, J, Jpressed, K, Kpressed, A, Apressed, S, Spressed, L, Lpressed, N, Npressed, Sc, Scpressed, fullN, fullSc;
+    public GameObject dFire, fFire, spaceFire, jFire, kFire, aFire, sFire, lFire, nFire, ScFire;
 
     // in game timer
     public double timer;
@@ -39,6 +55,10 @@ public class Controllers : MonoBehaviour
         fN = "F: ";
         jN = "J: ";
         kN = "K: ";
+        aN = "A: ";
+        sN = "S: ";
+        lN = "L: ";
+        nN = "Ñ: ";
 
         timer = 0;       
     }
@@ -49,6 +69,58 @@ public class Controllers : MonoBehaviour
         timer +=(1 * Time.deltaTime) * 100;
         fixedTimer = Convert.ToInt32(timer);
 
+        if (ChangeLayout.actualLayout == "spanish")
+        {
+            fullN.SetActive(true);
+            fullSc.SetActive(false);
+        }
+        else if (ChangeLayout.actualLayout == "english")
+        {
+            fullN.SetActive(false);
+            fullSc.SetActive(true);
+        }
+
+
+        if (Input.GetButtonDown("A"))
+        {
+            A.SetActive(false);
+            Apressed.SetActive(true);
+            aFire.SetActive(false);
+            Debug.Log(fixedTimer);
+            aNotes.Add(fixedTimer);
+            if (aNote.aFire == true)
+            {
+                A.SetActive(false);
+                Apressed.SetActive(false);
+                aFire.SetActive(true);
+            } 
+        }
+        else if (Input.GetButtonUp("A"))
+        {
+            A.SetActive(true);
+            Apressed.SetActive(false);
+            aFire.SetActive(false);
+        }
+        if (Input.GetButtonDown("S"))
+        {
+            S.SetActive(false);
+            Spressed.SetActive(true);
+            sFire.SetActive(false);
+            Debug.Log(fixedTimer);
+            sNotes.Add(fixedTimer);
+            if (sNote.sFire == true)
+            {
+                S.SetActive(false);
+                Spressed.SetActive(false);
+                sFire.SetActive(true);
+            }
+        }
+        else if (Input.GetButtonUp("S"))
+        {
+            S.SetActive(true);
+            Spressed.SetActive(false);
+            sFire.SetActive(false);
+        }
         if (Input.GetButtonDown("D"))
         {
             D.SetActive(false);
@@ -153,6 +225,56 @@ public class Controllers : MonoBehaviour
             Kpressed.SetActive(false);
             kFire.SetActive(false);
         }
+        if (Input.GetButtonDown("L"))
+        {
+            L.SetActive(false);
+            Lpressed.SetActive(true);
+            lFire.SetActive(false);
+            Debug.Log(fixedTimer);
+            lNotes.Add(fixedTimer);
+            if (lNote.lFire == true)
+            {
+                L.SetActive(false);
+                Lpressed.SetActive(false);
+                lFire.SetActive(true);
+            }
+        }
+        else if (Input.GetButtonUp("L"))
+        {
+            L.SetActive(true);
+            Lpressed.SetActive(false);
+            lFire.SetActive(false);
+        }
+        if (Input.GetButtonDown("N"))
+        {
+            Sc.SetActive(false);
+            Scpressed.SetActive(true);
+            ScFire.SetActive(false);
+            Debug.Log(fixedTimer);
+
+            N.SetActive(false);
+            Npressed.SetActive(true);
+            nFire.SetActive(false);
+            Debug.Log(fixedTimer);
+
+            nNotes.Add(fixedTimer);
+            if (nNote.nFire == true)
+            {
+                N.SetActive(false);
+                Npressed.SetActive(false);
+                nFire.SetActive(true);
+            }
+        }
+        else if (Input.GetButtonUp("N"))
+        {
+            Sc.SetActive(true);
+            Scpressed.SetActive(false);
+            ScFire.SetActive(false);
+
+            N.SetActive(true);
+            Npressed.SetActive(false);
+            nFire.SetActive(false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -178,7 +300,24 @@ public class Controllers : MonoBehaviour
                 {
                     kN += (i.ToString() + ", ");
                 }
-                notes.WriteLine(spaceN + "\r" + dN + "\r" + fN + "\r" + jN + "\r" + kN);
+
+                foreach (float i in aNotes)
+                {
+                    aN += (i.ToString() + ", ");
+                }
+                foreach (float i in sNotes)
+                {
+                    sN += (i.ToString() + ", ");
+                }
+                foreach (float i in lNotes)
+                {
+                    lN += (i.ToString() + ", ");
+                }
+                foreach (float i in nNotes)
+                {
+                    nN += (i.ToString() + ", ");
+                }
+                notes.WriteLine(aN + "\r" + sN + "\r" + dN + "\r" + fN + "\r" + spaceN + "\r" + jN + "\r" + kN + "\r" + lN + "\r" +  nN);
                 notes.Flush();
             }
         }

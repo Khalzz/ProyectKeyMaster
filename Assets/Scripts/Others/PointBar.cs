@@ -33,6 +33,30 @@ public class PointBar : MonoBehaviour
             spaceNote.pointState = false;
             Debug.Log(points);
         }
+        if (aNote.pointState == true)
+        {
+            points++;
+            aNote.pointState = false;
+            Debug.Log(points);
+        }
+        if (sNote.pointState == true)
+        {
+            points++;
+            sNote.pointState = false;
+            Debug.Log(points);
+        }
+        if (lNote.pointState == true)
+        {
+            points++;
+            lNote.pointState = false;
+            Debug.Log(points);
+        }
+        if (nNote.pointState == true)
+        {
+            points++;
+            nNote.pointState = false;
+            Debug.Log(points);
+        }
         if (kNote.pointState == true)
         {
             points++;
@@ -58,7 +82,7 @@ public class PointBar : MonoBehaviour
             Debug.Log(points);
         }
         
-        if (points == -1)
+        if (points < 0)
         {
             SceneManager.LoadScene(MainMenu.levelName);
             points = 5;
