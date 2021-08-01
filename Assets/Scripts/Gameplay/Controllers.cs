@@ -7,37 +7,64 @@ using System.IO;
 
 public class Controllers : MonoBehaviour
 {
+    public bool longNotesMode;
+
     // hard notes 1
+    //a
     List<int> aNotes = new List<int>();
     public string aN;
+    //a
 
+    //s
     List<int> sNotes = new List<int>();
     public string sN;
+    //s
     // hard notes 1
 
     // notes
+    //d
     List<int> dNotes = new List<int>();
     public string dN;
+    //d
 
+    //f
     List<int> fNotes = new List<int>();
     public string fN;
-    
+    //f
+
+    //space
     List<int> spaceNotes = new List<int>();
     public string spaceN;
 
+    List<int> spaceKeepPressing = new List<int>(); // normal timer
+    public string spaceKeepN;
+    public bool spacePressed;
+
+    List<int> spaceTimePressing = new List<int>(); // new timer
+    public string spaceTimeN;
+    //space
+
+    //j
     List<int> jNotes = new List<int>();
     public string jN;
+    //j
 
+    //k
     List<int> kNotes = new List<int>();
     public string kN;
+    //k
     //normal notes
 
     // hard notes 1
+    //l
     List<int> lNotes = new List<int>();
     public string lN;
+    //l
 
+    //n
     List<int> nNotes = new List<int>();
     public string nN;
+    //n
     // hard notes 1
 
     public GameObject D,Dpressed, F,Fpressed, Space, SpacePressed, J, Jpressed, K, Kpressed, A, Apressed, S, Spressed, L, Lpressed, N, Npressed, Sc, Scpressed, fullN, fullSc;
@@ -46,6 +73,9 @@ public class Controllers : MonoBehaviour
     // in game timer
     public double timer;
     static public int fixedTimer;
+
+    public double longNotesTimer;
+    static public int fixedLongNotesTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +89,10 @@ public class Controllers : MonoBehaviour
         sN = "S: ";
         lN = "L: ";
         nN = "Ñ: ";
+        spaceKeepN = "SpaceKeep: ";
+        spaceTimeN = "SpaceTime: ";
+
+        longNotesMode = false;
 
         timer = 0;       
     }
@@ -66,6 +100,21 @@ public class Controllers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Long"))
+        {
+            if (!longNotesMode)
+            {
+                Debug.Log("LNM activated");
+                longNotesMode = true;
+            }
+            else if (longNotesMode)
+            {
+                Debug.Log("LNM deactivated");
+                longNotesMode = false;
+            }
+        }
+        
+
         timer +=(1 * Time.deltaTime) * 100;
         fixedTimer = Convert.ToInt32(timer);
 
@@ -163,7 +212,7 @@ public class Controllers : MonoBehaviour
             fFire.SetActive(false);
         }
 
-        if (Input.GetButtonDown("Space"))
+        if (Input.GetButtonDown("Space") && !longNotesMode)
         {
             Space.SetActive(false);
             SpacePressed.SetActive(true);
@@ -177,13 +226,42 @@ public class Controllers : MonoBehaviour
                 spaceFire.SetActive(true);
             } 
         }
+        else if (Input.GetButton("Space"))
+        {
+            Space.SetActive(false);
+            SpacePressed.SetActive(true);
+            spaceFire.SetActive(false);
+            if (longSpaceNote.spaceFire == true)
+            {
+                Space.SetActive(false);
+                SpacePressed.SetActive(false);
+                spaceFire.SetActive(true);
+            } 
+        }
+        else if (Input.GetButton("Space") && longNotesMode)
+        {
+            longNotesTimer +=(1 * Time.deltaTime) * 100;
+            fixedLongNotesTimer = Convert.ToInt32(longNotesTimer);
+
+            if (!spacePressed)
+            {
+                spacePressed = true;  
+                spaceKeepPressing.Add(fixedTimer);
+            } 
+        }
+        else if (Input.GetButtonUp("Space") && longNotesMode)
+        {
+            spacePressed = false;
+            spaceTimePressing.Add(fixedLongNotesTimer);
+            longNotesTimer = 0;
+
+        }
         else if (Input.GetButtonUp("Space"))
         {
             Space.SetActive(true);
             SpacePressed.SetActive(false);
             spaceFire.SetActive(false);
         }
-
         if (Input.GetButtonDown("J"))
         {
             J.SetActive(false);
@@ -300,7 +378,6 @@ public class Controllers : MonoBehaviour
                 {
                     kN += (i.ToString() + ", ");
                 }
-
                 foreach (float i in aNotes)
                 {
                     aN += (i.ToString() + ", ");
@@ -317,7 +394,17 @@ public class Controllers : MonoBehaviour
                 {
                     nN += (i.ToString() + ", ");
                 }
-                notes.WriteLine(aN + "\r" + sN + "\r" + dN + "\r" + fN + "\r" + spaceN + "\r" + jN + "\r" + kN + "\r" + lN + "\r" +  nN);
+                foreach (float i in spaceKeepPressing)
+                {
+                    spaceKeepN += (i.ToString() + ", ");
+                }
+                foreach (float i in spaceTimePressing)
+                {
+                    spaceTimeN += (i.ToString() + ", ");
+                }
+                notes.WriteLine(aN + "\r" + sN + "\r" + dN + "\r" + fN + "\r" + spaceN + "\r" + jN + "\r" + kN + "\r" + lN + "\r" +  nN + "\r");
+                notes.WriteLine(spaceKeepN + "\r" + spaceTimeN);
+
                 notes.Flush();
             }
         }

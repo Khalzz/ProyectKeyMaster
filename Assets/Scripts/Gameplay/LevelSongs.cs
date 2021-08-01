@@ -18,6 +18,10 @@ public class LevelSongs : MonoBehaviour
     static public List<int> lNotes = new List<int>();
     static public List<int> nNotes = new List<int>();
 
+    //long notes
+    static public List<int> longSpaceNotes = new List<int>();
+    static public List<int> longSpaceTimes = new List<int>();
+
     
     // level test
     static public List<int> aLevelTest = new List<int>() {269, 334, 391, 451, 515, 583, 644, 705, 894, 921, 269, 334, 391, 451, 515, 583, 644, 705, 894, 921};
@@ -41,8 +45,22 @@ public class LevelSongs : MonoBehaviour
     static public List<int> kLevelTest2 = new List<int>() {1927, 2142, 2355, 2531, 2567, 2783, 2997, 3209, 3382, 3418, 3636, 3846, 4062, 4276, 4490, 4703, 4915, 5128, 5342, 5551, 5764, 5953, 5980, 6193, 6408, 6620, 7010, 7033, 7142, 7167, 7433, 7460, 7780, 7803, 7998, 8022, 8208, 8232};
     static public List<int> lLevelTest2 = new List<int>() {};
     static public List<int> nLevelTest2 = new List<int>() {};
-    
     // level test 2
+
+    // level swan lake
+    static public List<int> aLevelSwanLake = new List<int>() {};
+    static public List<int> sLevelSwanLake = new List<int>() {};
+    static public List<int> dLevelSwanLake = new List<int>() {};
+    static public List<int> fLevelSwanLake = new List<int>() {};
+    static public List<int> spaceLevelSwanLake = new List<int>() {};
+    static public List<int> jLevelSwanLake = new List<int>() {};
+    static public List<int> kLevelSwanLake = new List<int>() {};
+    static public List<int> lLevelSwanLake = new List<int>() {};
+    static public List<int> nLevelSwanLake = new List<int>() {};
+
+    static public List<int> lSLSwanLake = new List<int>() {519}; // note
+    static public List<int> lSTSwanLake = new List<int>() {133}; // time
+    // level swan lake
 
     void Start()
     {   
@@ -74,6 +92,21 @@ public class LevelSongs : MonoBehaviour
             kNotes = kLevelTest2;
             lNotes = lLevelTest2;
             nNotes = nLevelTest2;
+        }
+        else if (MainMenu.levelName == "Swan Lake")
+        {
+            aNotes = aLevelSwanLake;
+            sNotes = sLevelSwanLake;
+            dNotes = dLevelSwanLake;
+            fNotes = fLevelSwanLake;
+            spaceNotes = spaceLevelSwanLake;
+            jNotes = jLevelSwanLake;
+            kNotes = kLevelSwanLake;
+            lNotes = lLevelSwanLake;
+            nNotes = nLevelSwanLake;
+
+            longSpaceNotes = lSLSwanLake;
+            longSpaceTimes = lSTSwanLake;
         }
     }
 }

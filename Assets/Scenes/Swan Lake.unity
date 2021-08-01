@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 54568087}
   m_Layer: 0
   m_Name: F
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,7 +549,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e12814fdf9f14104ea3d501ab9a5369d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 957eca2da7218ee469f8e4f120720343, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1768,7 +1768,7 @@ GameObject:
   - component: {fileID: 530229337}
   m_Layer: 0
   m_Name: L
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3659,7 +3659,7 @@ GameObject:
   - component: {fileID: 1093912209}
   m_Layer: 0
   m_Name: D
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4429,7 +4429,7 @@ GameObject:
   - component: {fileID: 1377326867}
   m_Layer: 0
   m_Name: Space
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4701,7 +4701,7 @@ GameObject:
   - component: {fileID: 1578571574}
   m_Layer: 0
   m_Name: "\xD1"
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5197,7 +5197,7 @@ GameObject:
   - component: {fileID: 1759417924}
   m_Layer: 0
   m_Name: A
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5279,7 +5279,7 @@ GameObject:
   - component: {fileID: 1781723641}
   m_Layer: 0
   m_Name: J
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5653,7 +5653,7 @@ GameObject:
   - component: {fileID: 1878952422}
   m_Layer: 0
   m_Name: S
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5818,7 +5818,7 @@ GameObject:
   - component: {fileID: 1902214946}
   m_Layer: 0
   m_Name: K
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

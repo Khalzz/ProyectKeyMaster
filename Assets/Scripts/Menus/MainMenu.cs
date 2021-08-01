@@ -39,4 +39,10 @@ public class MainMenu : MonoBehaviour
         levelName = "Test 2";
         SceneManager.LoadScene(levelName);
     }
+
+    public void swanLake()
+    {
+        levelName = "Swan Lake";
+        SceneManager.LoadScene(levelName);
+    }
 }
