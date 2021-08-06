@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
-
     static public string levelName;
     // Start is called before the first frame update
     void Start()
@@ -31,18 +31,18 @@ public class MainMenu : MonoBehaviour
     public void test()
     {
         levelName = "Test";
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene("Play");
     }
 
     public void test2()
     {
-        levelName = "Test 2";
-        SceneManager.LoadScene(levelName);
+        levelName = "Descent into cerberon";
+        SceneManager.LoadScene("Play");
     }
 
     public void swanLake()
     {
         levelName = "Swan Lake";
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene("Play");
     }
 }

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Test.unity
     guid: cffc54ce39ec2664daa284fcc511b2d2
   - enabled: 1
-    path: Assets/Scenes/Test 2.unity
+    path: Assets/Scenes/Play.unity
     guid: 22721ed76480f804ab0acdf82f07720f
   - enabled: 1
     path: Assets/Scenes/Swan Lake.unity

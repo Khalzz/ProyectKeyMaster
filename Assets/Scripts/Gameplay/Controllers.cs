@@ -11,29 +11,29 @@ public class Controllers : MonoBehaviour
 
     // hard notes 1
     //a
-    List<int> aNotes = new List<int>();
+    static public List<int> aNotes = new List<int>();
     public string aN;
     //a
 
     //s
-    List<int> sNotes = new List<int>();
+    static public List<int> sNotes = new List<int>();
     public string sN;
     //s
     // hard notes 1
 
     // notes
     //d
-    List<int> dNotes = new List<int>();
+    static public List<int> dNotes = new List<int>();
     public string dN;
     //d
 
     //f
-    List<int> fNotes = new List<int>();
+    static public List<int> fNotes = new List<int>();
     public string fN;
     //f
 
     //space
-    List<int> spaceNotes = new List<int>();
+    static public List<int> spaceNotes = new List<int>();
     public string spaceN;
 
     List<int> spaceKeepPressing = new List<int>(); // normal timer
@@ -45,24 +45,24 @@ public class Controllers : MonoBehaviour
     //space
 
     //j
-    List<int> jNotes = new List<int>();
+    static public List<int> jNotes = new List<int>();
     public string jN;
     //j
 
     //k
-    List<int> kNotes = new List<int>();
+    static public List<int> kNotes = new List<int>();
     public string kN;
     //k
     //normal notes
 
     // hard notes 1
     //l
-    List<int> lNotes = new List<int>();
+    static public List<int> lNotes = new List<int>();
     public string lN;
     //l
 
     //n
-    List<int> nNotes = new List<int>();
+    static public List<int> nNotes = new List<int>();
     public string nN;
     //n
     // hard notes 1
@@ -79,21 +79,8 @@ public class Controllers : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { 
-        spaceN = "Space: ";
-        dN = "D: ";
-        fN = "F: ";
-        jN = "J: ";
-        kN = "K: ";
-        aN = "A: ";
-        sN = "S: ";
-        lN = "L: ";
-        nN = "Ñ: ";
-        spaceKeepN = "SpaceKeep: ";
-        spaceTimeN = "SpaceTime: ";
-
+    {
         longNotesMode = false;
-
         timer = 0;       
     }
 
@@ -354,59 +341,92 @@ public class Controllers : MonoBehaviour
             nFire.SetActive(false);
         }
 
+        /*song creation system
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            using (StreamWriter notes = File.AppendText("Notes.txt")) 
+            using (StreamWriter aNotesTxt = File.AppendText("./Songs/NewSong/Notes/aNotes.txt")) 
+            {
+                foreach (float i in aNotes)
+                {
+                    aN += (i.ToString() + "\r");
+                }
+                aNotesTxt.WriteLine(aN);
+                aNotesTxt.Flush();
+            }
+            using (StreamWriter sNotesTxt = File.AppendText("./Songs/NewSong/Notes/sNotes.txt")) 
+            {
+                foreach (float i in sNotes)
+                {
+                    sN += (i.ToString() + "\r");
+                }
+                sNotesTxt.WriteLine(sN);
+                sNotesTxt.Flush();
+            }
+            using (StreamWriter dNotesTxt = File.AppendText("./Songs/NewSong/Notes/dNotes.txt")) 
+            {
+                foreach (float i in dNotes)
+                {
+                    dN += (i.ToString() + "\r");
+                }
+                dNotesTxt.WriteLine(dN);
+                dNotesTxt.Flush();
+            }
+            using (StreamWriter fNotesTxt = File.AppendText("./Songs/NewSong/Notes/fNotes.txt")) 
+            {
+                foreach (float i in fNotes)
+                {
+                    fN += (i.ToString() + "\r");
+                }
+                fNotesTxt.WriteLine(fN);
+                fNotesTxt.Flush();
+            }
+            using (StreamWriter spaceNotesTxt = File.AppendText("./Songs/NewSong/Notes/spaceNotes.txt")) 
             {
                 foreach (float i in spaceNotes)
                 {
-                    spaceN += (i.ToString() + ", ");
+                    spaceN += (i.ToString() + "\r");
                 }
-                foreach (float i in dNotes)
-                {
-                    dN += (i.ToString() + ", ");
-                }
-                foreach (float i in fNotes)
-                {
-                    fN += (i.ToString() + ", ");
-                }
+                spaceNotesTxt.WriteLine(spaceN);
+                spaceNotesTxt.Flush();
+            }
+            using (StreamWriter jNotesTxt = File.AppendText("./Songs/NewSong/Notes/jNotes.txt")) 
+            {
                 foreach (float i in jNotes)
                 {
-                    jN += (i.ToString() + ", ");
+                    jN += (i.ToString() + "\r");
                 }
+                jNotesTxt.WriteLine(jN);
+                jNotesTxt.Flush();
+            }
+            using (StreamWriter kNotesTxt = File.AppendText("./Songs/NewSong/Notes/kNotes.txt")) 
+            {
                 foreach (float i in kNotes)
                 {
-                    kN += (i.ToString() + ", ");
+                    kN += (i.ToString() + "\r");
                 }
-                foreach (float i in aNotes)
-                {
-                    aN += (i.ToString() + ", ");
-                }
-                foreach (float i in sNotes)
-                {
-                    sN += (i.ToString() + ", ");
-                }
+                kNotesTxt.WriteLine(kN);
+                kNotesTxt.Flush();
+            }
+            using (StreamWriter lNotesTxt = File.AppendText("./Songs/NewSong/Notes/lNotes.txt")) 
+            {
                 foreach (float i in lNotes)
                 {
-                    lN += (i.ToString() + ", ");
+                    lN += (i.ToString() + "\r");
                 }
+                lNotesTxt.WriteLine(lN);
+                lNotesTxt.Flush();
+            }
+            using (StreamWriter nNotesTxt = File.AppendText("./Songs/NewSong/Notes/nNotes.txt")) 
+            {
                 foreach (float i in nNotes)
                 {
-                    nN += (i.ToString() + ", ");
+                    nN += (i.ToString() + "\r");
                 }
-                foreach (float i in spaceKeepPressing)
-                {
-                    spaceKeepN += (i.ToString() + ", ");
-                }
-                foreach (float i in spaceTimePressing)
-                {
-                    spaceTimeN += (i.ToString() + ", ");
-                }
-                notes.WriteLine(aN + "\r" + sN + "\r" + dN + "\r" + fN + "\r" + spaceN + "\r" + jN + "\r" + kN + "\r" + lN + "\r" +  nN + "\r");
-                notes.WriteLine(spaceKeepN + "\r" + spaceTimeN);
-
-                notes.Flush();
+                nNotesTxt.WriteLine(nN);
+                nNotesTxt.Flush();
             }
+        
         }
+        */
     }
 }
