@@ -11,29 +11,18 @@ public class CreateSongButton : MonoBehaviour
     public GameObject levelMenu;
     public GameObject songButtonPrefab;
     public TextMeshProUGUI buttonText;
+    */
 
-    public string[] directories;
+    public string[] directories; // string array
     List<string> fileNames = new List<string>();
-
-    public static string listButtonName;
 
     // Start is called before the first frame update
     void Start()
     {
-        directories = Directory.GetDirectories("./Songs");
-        
+        directories = Directory.GetDirectories(Application.streamingAssetsPath);
         foreach (string i in directories)
         {
-            Debug.Log(i.Substring(8));
-            yPosition -= 26;
-            Instantiate(songButtonPrefab, transform.position, Quaternion.identity, transform.parent);
-            Debug.Log(yPosition);
-            Debug.Log(listButtonName);
-            if (gameObject.tag == "Prefab")
-            {
-                this.GetComponentInChildren<TextMeshProUGUI>().SetText(listButtonName);
-                this.GetComponent<RectTransform>().anchoredPosition = new Vector3(0,yPosition, 0);
-            }
+            Debug.Log(i.Substring(63));
         }
     }
 
@@ -41,5 +30,4 @@ public class CreateSongButton : MonoBehaviour
     {
               
     }
-    */
 }

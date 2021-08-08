@@ -213,18 +213,6 @@ public class Controllers : MonoBehaviour
                 spaceFire.SetActive(true);
             } 
         }
-        else if (Input.GetButton("Space"))
-        {
-            Space.SetActive(false);
-            SpacePressed.SetActive(true);
-            spaceFire.SetActive(false);
-            if (longSpaceNote.spaceFire == true)
-            {
-                Space.SetActive(false);
-                SpacePressed.SetActive(false);
-                spaceFire.SetActive(true);
-            } 
-        }
         else if (Input.GetButton("Space") && longNotesMode)
         {
             longNotesTimer +=(1 * Time.deltaTime) * 100;
