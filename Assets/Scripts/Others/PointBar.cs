@@ -84,8 +84,7 @@ public class PointBar : MonoBehaviour
         
         if (points < 0)
         {
-            SceneManager.LoadScene(MainMenu.levelName);
-            points = 5;
+            SceneManager.LoadScene("Play");
         }
         else if (points == 0)
         {

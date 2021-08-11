@@ -42,12 +42,19 @@ public class spaceNote : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other) 
     {
-        spaceState = true;
-        spaceFire = true;
+        if (other.tag == "GameController")
+        {
+            spaceState = true;
+            spaceFire = true;
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        spaceState = false;
-        spaceFire = false;
+        if (other.tag == "GameController")
+        {
+            print(fixedTimer);
+            spaceState = false;
+            spaceFire = false;
+        }
     }
 }

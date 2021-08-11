@@ -43,12 +43,18 @@ public class dNote : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other) 
     {
-        dFire = true;
-        dState = true;
+        if (other.tag == "GameController")
+        {
+            dState = true;
+            dFire = true;
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        dFire = false;
-        dState = false;
+        if (other.tag == "GameController")
+        {
+            dState = false;
+            dFire = false;
+        }
     }
 }

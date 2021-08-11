@@ -34,18 +34,14 @@ public class CreateNewSong : MonoBehaviour
 
     void Awake()
     {
-        jsonPath = Application.streamingAssetsPath + "/NewSong/notes.json"; // we asign the path of the json file bassed on the streamingAsset folder
+        jsonPath = Application.streamingAssetsPath + "/EmptySong/notes.json"; // we asign the path of the json file bassed on the streamingAsset folder
 
-        if (!Directory.Exists(Application.streamingAssetsPath + "/NewSong"))
+        if (!Directory.Exists(Application.streamingAssetsPath + "/EmptySong"))
         {
-            Directory.CreateDirectory(Application.streamingAssetsPath + "/NewSong");
+            Directory.CreateDirectory(Application.streamingAssetsPath + "/EmptySong");
             jsonString = JsonUtility.ToJson(newSongNotes);
             File.WriteAllText(jsonPath, jsonString);
             print("a new empty song folder have been created");
-        }
-        else
-        {
-            print("it exist");
         }
 
         jsonString = File.ReadAllText(jsonPath); // read json text as just a text
@@ -102,7 +98,7 @@ public class CreateNewSong : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            File.Move(Application.streamingAssetsPath + "/NewSong", Application.streamingAssetsPath + "/LatestSong");
+            File.Move(Application.streamingAssetsPath + "/EmptySong", Application.streamingAssetsPath + "/LatestSong");
         }
     } 
 }

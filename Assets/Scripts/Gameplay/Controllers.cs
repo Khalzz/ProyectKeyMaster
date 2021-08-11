@@ -101,7 +101,6 @@ public class Controllers : MonoBehaviour
             }
         }
         
-
         timer +=(1 * Time.deltaTime) * 100;
         fixedTimer = Convert.ToInt32(timer);
 
@@ -328,93 +327,5 @@ public class Controllers : MonoBehaviour
             Npressed.SetActive(false);
             nFire.SetActive(false);
         }
-
-        /*song creation system
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            using (StreamWriter aNotesTxt = File.AppendText("./Songs/NewSong/Notes/aNotes.txt")) 
-            {
-                foreach (float i in aNotes)
-                {
-                    aN += (i.ToString() + "\r");
-                }
-                aNotesTxt.WriteLine(aN);
-                aNotesTxt.Flush();
-            }
-            using (StreamWriter sNotesTxt = File.AppendText("./Songs/NewSong/Notes/sNotes.txt")) 
-            {
-                foreach (float i in sNotes)
-                {
-                    sN += (i.ToString() + "\r");
-                }
-                sNotesTxt.WriteLine(sN);
-                sNotesTxt.Flush();
-            }
-            using (StreamWriter dNotesTxt = File.AppendText("./Songs/NewSong/Notes/dNotes.txt")) 
-            {
-                foreach (float i in dNotes)
-                {
-                    dN += (i.ToString() + "\r");
-                }
-                dNotesTxt.WriteLine(dN);
-                dNotesTxt.Flush();
-            }
-            using (StreamWriter fNotesTxt = File.AppendText("./Songs/NewSong/Notes/fNotes.txt")) 
-            {
-                foreach (float i in fNotes)
-                {
-                    fN += (i.ToString() + "\r");
-                }
-                fNotesTxt.WriteLine(fN);
-                fNotesTxt.Flush();
-            }
-            using (StreamWriter spaceNotesTxt = File.AppendText("./Songs/NewSong/Notes/spaceNotes.txt")) 
-            {
-                foreach (float i in spaceNotes)
-                {
-                    spaceN += (i.ToString() + "\r");
-                }
-                spaceNotesTxt.WriteLine(spaceN);
-                spaceNotesTxt.Flush();
-            }
-            using (StreamWriter jNotesTxt = File.AppendText("./Songs/NewSong/Notes/jNotes.txt")) 
-            {
-                foreach (float i in jNotes)
-                {
-                    jN += (i.ToString() + "\r");
-                }
-                jNotesTxt.WriteLine(jN);
-                jNotesTxt.Flush();
-            }
-            using (StreamWriter kNotesTxt = File.AppendText("./Songs/NewSong/Notes/kNotes.txt")) 
-            {
-                foreach (float i in kNotes)
-                {
-                    kN += (i.ToString() + "\r");
-                }
-                kNotesTxt.WriteLine(kN);
-                kNotesTxt.Flush();
-            }
-            using (StreamWriter lNotesTxt = File.AppendText("./Songs/NewSong/Notes/lNotes.txt")) 
-            {
-                foreach (float i in lNotes)
-                {
-                    lN += (i.ToString() + "\r");
-                }
-                lNotesTxt.WriteLine(lN);
-                lNotesTxt.Flush();
-            }
-            using (StreamWriter nNotesTxt = File.AppendText("./Songs/NewSong/Notes/nNotes.txt")) 
-            {
-                foreach (float i in nNotes)
-                {
-                    nN += (i.ToString() + "\r");
-                }
-                nNotesTxt.WriteLine(nN);
-                nNotesTxt.Flush();
-            }
-        
-        }
-        */
     }
 }

@@ -17,13 +17,13 @@ public class createLongSpace : MonoBehaviour
     {
         foreach(int i in LevelSongs.longSpaceNotes)
         {
-            if ((i - 130 == Controllers.fixedTimer))
+            if ((i - 135 == Controllers.fixedTimer))
             {
                 longNotesTimer = 0;
                 longNotesTimer +=(1 * Time.deltaTime) * 100;
                 fixedLongNotesTimer = Convert.ToInt32(longNotesTimer);           
             }
-            if ( Controllers.fixedTimer >= i - 130 && Controllers.fixedTimer <= i - 130 + LevelSongs.longSpaceTimes[LevelSongs.longSpaceNotes.IndexOf(i)])
+            if ( Controllers.fixedTimer >= i - 135 && Controllers.fixedTimer <= i - 135 + LevelSongs.longSpaceTimes[LevelSongs.longSpaceNotes.IndexOf(i)])
             {
                 Debug.Log("instanciao");
                 Instantiate(spacePrefab, transform.position, Quaternion.identity);

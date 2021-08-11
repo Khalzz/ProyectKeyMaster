@@ -10,7 +10,7 @@ public class createF : MonoBehaviour
     {
         foreach(int i in LevelSongs.fNotes)
         {
-            if (i - 130 == Controllers.fixedTimer)
+            if (i - 135 == Controllers.fixedTimer)
             {
                 Instantiate(fPrefab, transform.position, Quaternion.identity);
             }

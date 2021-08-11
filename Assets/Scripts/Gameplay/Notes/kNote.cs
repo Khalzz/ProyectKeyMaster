@@ -41,12 +41,18 @@ public class kNote : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other) 
     {
-        kState = true;
-        kFire = true;
+        if (other.tag == "GameController")
+        {
+            kState = true;
+            kFire = true;
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        kFire = false;
-        kState = false;
+        if (other.tag == "GameController")
+        {
+            kState = false;
+            kFire = false;
+        }
     }
 }

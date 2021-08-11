@@ -42,12 +42,18 @@ public class jNote : MonoBehaviour
     
     void OnTriggerStay2D(Collider2D other) 
     {
-        jState = true;
-        jFire = true;
+        if (other.tag == "GameController")
+        {
+            jState = true;
+            jFire = true;
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        jFire = false;
-        jState = false;
+        if (other.tag == "GameController")
+        {
+            jState = false;
+            jFire = false;
+        }
     }
 }
