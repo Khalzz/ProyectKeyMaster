@@ -10,7 +10,7 @@ public class createJ : MonoBehaviour
     {
         foreach(int i in LevelSongs.jNotes)
         {
-            if (i - 135 == Controllers.fixedTimer)
+            if (i - 125 == Controllers.fixedTimer)
             {
                 Instantiate(jPrefab, transform.position, Quaternion.identity);
             }

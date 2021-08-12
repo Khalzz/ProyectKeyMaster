@@ -26,7 +26,7 @@ public class spaceNote : MonoBehaviour
         timer +=(1 * Time.deltaTime) * 100;
         fixedTimer = Convert.ToInt32(timer);
 
-        gameObject.transform.Translate(0,-10f * Time.deltaTime,0);
+        gameObject.transform.Translate(0,Controllers.generalNoteVelocity * Time.deltaTime,0);
         if(Input.GetButtonDown("Space") && spaceState)
         {
             pointState = true;

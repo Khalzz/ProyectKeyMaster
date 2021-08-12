@@ -50,9 +50,12 @@ public class LevelSongs : MonoBehaviour
 
     void Awake()
     {
-        jsonPath = Application.streamingAssetsPath + "/" + MainMenu.levelName + "/notes.json"; // we asign the path of the json file bassed on the streamingAsset folder
-        jsonString = File.ReadAllText(jsonPath); // read json text as just a text
-        songNotes = JsonUtility.FromJson<notes>(jsonString); // transform the json text to a json
+        if (MainMenu.levelName != "SyncTest")
+        {
+            jsonPath = Application.streamingAssetsPath + "/" + MainMenu.levelName + "/notes.json"; // we asign the path of the json file bassed on the streamingAsset folder
+            jsonString = File.ReadAllText(jsonPath); // read json text as just a text
+            songNotes = JsonUtility.FromJson<notes>(jsonString); // transform the json text to a json
+        }
     }
 
     void Start()

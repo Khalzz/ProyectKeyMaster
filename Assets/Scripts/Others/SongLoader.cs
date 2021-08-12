@@ -12,13 +12,17 @@ public class SongLoader : MonoBehaviour
 
     void Awake()
     {
-        audioSource = gameObject.AddComponent<AudioSource>(); // we add a audio source to our object in the game
-        audioPath = Application.streamingAssetsPath + "/" + MainMenu.levelName + "/";
+        if (MainMenu.levelName != "SyncTest")
+        {
+            audioSource = gameObject.AddComponent<AudioSource>(); // we add a audio source to our object in the game
+            audioPath = Application.streamingAssetsPath + "/" + MainMenu.levelName + "/";
+            StartCoroutine(LoadAudio());
+        }
     }
 
     void Start()
     {
-        StartCoroutine(LoadAudio());
+       
     }
 
     private IEnumerator LoadAudio()

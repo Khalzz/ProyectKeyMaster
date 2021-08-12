@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("GET OUUUUUUUUUT!!!");
     }
 
-    public void test()
+/*    public void test()
     {
         levelName = "Test";
         SceneManager.LoadScene("Play");
@@ -41,5 +41,12 @@ public class MainMenu : MonoBehaviour
     {
         levelName = "Swan Lake";
         SceneManager.LoadScene("Play");
+    }
+*/
+
+    public void SyncTest()
+    {
+        SceneManager.LoadScene("SyncTest");
+        levelName = "SyncTest";
     }
 }

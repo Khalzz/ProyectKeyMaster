@@ -7,6 +7,8 @@ using System.IO;
 
 public class Controllers : MonoBehaviour
 {
+    static public float generalNoteVelocity;
+
     public bool longNotesMode;
 
     // hard notes 1
@@ -80,6 +82,8 @@ public class Controllers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        generalNoteVelocity = -10f;
+
         longNotesMode = false;
         timer = 0;       
     }

@@ -13,7 +13,7 @@ public class createSpace : MonoBehaviour
         foreach(int i in LevelSongs.spaceNotes)
         {
             
-            if (i - 135 == Controllers.fixedTimer)
+            if (i - 125 == Controllers.fixedTimer)
             {
                 Instantiate(spacePrefab, transform.position, Quaternion.identity);
             }
