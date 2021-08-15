@@ -12,13 +12,20 @@ public class PauseMenu : MonoBehaviour
     public AudioSource audio;
 
     public GameObject pauseMenu;
+
+    public GameObject loseMenu;
     
     static public bool countStarted;
+
+    void Awake()
+    {
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        AudioListener.pause = false;
         itsPaused = false;
         countStarted = false;
     }
@@ -35,6 +42,11 @@ public class PauseMenu : MonoBehaviour
         {
             print("its resumed");
             Resume();
+        }
+
+        if (PointBar.points < 0)
+        {
+            Lose();
         }
     }
 
@@ -56,16 +68,24 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        itsPaused = true;
+        itsPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Play");
     }
 
     public void BackToMenu()
     {
-        itsPaused = true;
+        itsPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Lose()
+    {
+        itsPaused = true;
+        AudioListener.pause = true;
+        loseMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 
 }

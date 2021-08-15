@@ -18,6 +18,8 @@ public class PointBar : MonoBehaviour
     public GameObject point9;
     public GameObject point10;
 
+    
+
     static public int points;
     
     void Start()
@@ -81,12 +83,8 @@ public class PointBar : MonoBehaviour
             dNote.pointState = false;
             Debug.Log(points);
         }
-        
-        if (points < 0)
-        {
-            SceneManager.LoadScene("Play");
-        }
-        else if (points == 0)
+
+        if (points == 0)
         {
             point0.SetActive(true);
             point1.SetActive(false);
