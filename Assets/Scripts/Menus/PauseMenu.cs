@@ -14,6 +14,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
 
     public GameObject loseMenu;
+
+    public GameObject winMenu;
+
+    public bool canEsc;
     
     static public bool countStarted;
 
@@ -26,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canEsc = true;
         itsPaused = false;
         countStarted = false;
     }
@@ -33,12 +38,12 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Pause") && !itsPaused)
+        if (Input.GetButtonDown("Pause") && !itsPaused && canEsc)
         {
             print("its paused");
             Pause();
         }
-        else if (Input.GetButtonDown("Pause") && itsPaused)
+        else if (Input.GetButtonDown("Pause") && itsPaused && canEsc)
         {
             print("its resumed");
             Resume();
@@ -47,6 +52,11 @@ public class PauseMenu : MonoBehaviour
         if (PointBar.points < 0)
         {
             Lose();
+        }
+        
+        if (Controllers.fixedTimer == LevelSongs.endLevel)
+        {
+            Win();
         }
     }
 
@@ -82,9 +92,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Lose()
     {
+        canEsc = false;
         itsPaused = true;
         AudioListener.pause = true;
         loseMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Win()
+    {
+        canEsc = false;
+        itsPaused = true;
+        AudioListener.pause = true;
+        winMenu.SetActive(true);
         Time.timeScale = 0f;
     }
 

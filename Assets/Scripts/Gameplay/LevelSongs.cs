@@ -19,6 +19,7 @@ public class LevelSongs : MonoBehaviour
         public List<int> K = new List<int>();
         public List<int> L = new List<int>();
         public List<int> N = new List<int>();
+        public int End;
     } 
 
     public notes songNotes; // calling class
@@ -38,6 +39,7 @@ public class LevelSongs : MonoBehaviour
     static public List<int> kNotes = new List<int>();
     static public List<int> lNotes = new List<int>();
     static public List<int> nNotes = new List<int>();
+    static public int endLevel;
 
     //long notes
     static public List<int> longSpaceNotes = new List<int>();
@@ -74,6 +76,7 @@ public class LevelSongs : MonoBehaviour
         kNotes = songNotes.K;
         lNotes = songNotes.L;
         nNotes = songNotes.N;
+        endLevel = songNotes.End;
 
         // longSpaceNotes = lSLSwanLake;
         // longSpaceTimes = lSTSwanLake;

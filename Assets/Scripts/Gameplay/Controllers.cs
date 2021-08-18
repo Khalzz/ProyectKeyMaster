@@ -119,7 +119,6 @@ public class Controllers : MonoBehaviour
             fullSc.SetActive(true);
         }
 
-
         if (Input.GetButtonDown("A"))
         {
             A.SetActive(false);

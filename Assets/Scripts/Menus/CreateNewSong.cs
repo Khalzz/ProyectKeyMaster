@@ -25,6 +25,7 @@ public class CreateNewSong : MonoBehaviour
         public List<int> K = new List<int>();
         public List<int> L = new List<int>();
         public List<int> N = new List<int>();
+        public int End;
     } 
 
     public string jsonPath;
@@ -93,6 +94,7 @@ public class CreateNewSong : MonoBehaviour
             {
                 newSongNotes.N.Add(i);
             }
+            newSongNotes.End = Controllers.fixedTimer;
             jsonString = JsonUtility.ToJson(newSongNotes); // we get this string and transform it to a json again
             File.WriteAllText(jsonPath, jsonString); // we write the json string in the file
         }
