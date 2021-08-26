@@ -98,6 +98,19 @@ public class CreateNewSong : MonoBehaviour
             jsonString = JsonUtility.ToJson(newSongNotes); // we get this string and transform it to a json again
             File.WriteAllText(jsonPath, jsonString); // we write the json string in the file
         }
+        /*if (Input.GetKeyDown(KeyCode.E))
+        {
+            print("E");
+            newSongNotes.A.Clear();
+            newSongNotes.S.Clear();
+            newSongNotes.D.Clear();
+            newSongNotes.F.Clear();
+            newSongNotes.Space.Clear();
+            newSongNotes.J.Clear();
+            newSongNotes.K.Clear();
+            newSongNotes.L.Clear();
+            newSongNotes.N.Clear();
+        }*/ 
         if (Input.GetKeyDown(KeyCode.W))
         {
             File.Move(Application.streamingAssetsPath + "/EmptySong", Application.streamingAssetsPath + "/LatestSong");

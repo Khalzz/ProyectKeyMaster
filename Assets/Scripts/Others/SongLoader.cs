@@ -15,7 +15,7 @@ public class SongLoader : MonoBehaviour
         if (MainMenu.levelName != "SyncTest")
         {
             audioSource = gameObject.AddComponent<AudioSource>(); // we add a audio source to our object in the game
-            audioPath = Application.streamingAssetsPath + "/" + MainMenu.levelName + "/";
+            audioPath = Application.streamingAssetsPath + "/Songs" + "/" + MainMenu.levelName + "/";
             StartCoroutine(LoadAudio());
         }
     }

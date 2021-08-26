@@ -33,6 +33,12 @@ public class dNote : MonoBehaviour
             pointState = true;
             this.gameObject.SetActive(false);
         }
+        /*else if(Input.GetButtonDown("D") && !dState )
+        {
+            PointBar.points--;
+            Debug.Log("it worked");
+            pointFailed = true;
+        }*/
         if (fixedTimer == 160 && !pointFailed) 
         {
             PointBar.points--;

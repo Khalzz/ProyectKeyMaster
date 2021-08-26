@@ -31,54 +31,63 @@ public class PointBar : MonoBehaviour
     {
         if (spaceNote.pointState == true)
         {
+            PointsCount.points++;
             points++;
             spaceNote.pointState = false;
             Debug.Log(points);
         }
         if (aNote.pointState == true)
         {
+            PointsCount.points++;
             points++;
             aNote.pointState = false;
             Debug.Log(points);
         }
         if (sNote.pointState == true)
         {
+            PointsCount.points++;
             points++;
             sNote.pointState = false;
             Debug.Log(points);
         }
         if (lNote.pointState == true)
         {
+            PointsCount.points++;
             points++;
             lNote.pointState = false;
             Debug.Log(points);
         }
         if (nNote.pointState == true)
         {
+            PointsCount.points++;
             points++;
             nNote.pointState = false;
             Debug.Log(points);
         }
         if (kNote.pointState == true)
         {
+            PointsCount.points++;
             points++;
             kNote.pointState = false;
             Debug.Log(points);
         }
         if (jNote.pointState == true)
         {
+            PointsCount.points++;
             points++;
             jNote.pointState = false;
             Debug.Log(points);
         }
         if (fNote.pointState == true)
         {
+            PointsCount.points++;
             points++;
             fNote.pointState = false;
             Debug.Log(points);
         }
         if (dNote.pointState == true)
         {
+            PointsCount.points++; 
             points++;
             dNote.pointState = false;
             Debug.Log(points);

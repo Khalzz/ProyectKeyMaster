@@ -7,17 +7,19 @@ using TMPro;
 
 public class CreateSongButton : MonoBehaviour
 {
-    public static float yPosition = 0;
+    public static float yPosition;
     public static string levelName;
 
     public GameObject songButtonPrefab;
+    public GameObject songContainer;
 
     public string[] directories; // string array
     List<string> fileNames = new List<string>();
 
     void Awake()
     {
-        directories = Directory.GetDirectories(Application.streamingAssetsPath);
+        yPosition = 0;
+        directories = Directory.GetDirectories(Application.streamingAssetsPath + "/Songs" + "/");
         foreach (string i in directories)
         {
             levelName = Path.GetFileName(i);
