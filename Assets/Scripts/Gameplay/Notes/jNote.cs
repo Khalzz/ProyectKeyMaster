@@ -35,6 +35,7 @@ public class jNote : MonoBehaviour
         if (fixedTimer == 160 && !pointFailed) 
         {
             PointBar.points--;
+            PointsCount.pointsStreak = 0;
             Debug.Log("it worked");
             pointFailed = true;
         }

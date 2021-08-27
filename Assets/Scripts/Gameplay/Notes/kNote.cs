@@ -35,6 +35,7 @@ public class kNote : MonoBehaviour
         if (fixedTimer == 160 && !pointFailed) 
         {
             PointBar.points--;
+            PointsCount.pointsStreak = 0;
             pointFailed = true;
         }
     }

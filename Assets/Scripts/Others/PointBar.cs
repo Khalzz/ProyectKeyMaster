@@ -32,6 +32,7 @@ public class PointBar : MonoBehaviour
         if (spaceNote.pointState == true)
         {
             PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             spaceNote.pointState = false;
             Debug.Log(points);
@@ -39,6 +40,7 @@ public class PointBar : MonoBehaviour
         if (aNote.pointState == true)
         {
             PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             aNote.pointState = false;
             Debug.Log(points);
@@ -46,6 +48,7 @@ public class PointBar : MonoBehaviour
         if (sNote.pointState == true)
         {
             PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             sNote.pointState = false;
             Debug.Log(points);
@@ -53,6 +56,7 @@ public class PointBar : MonoBehaviour
         if (lNote.pointState == true)
         {
             PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             lNote.pointState = false;
             Debug.Log(points);
@@ -60,6 +64,7 @@ public class PointBar : MonoBehaviour
         if (nNote.pointState == true)
         {
             PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             nNote.pointState = false;
             Debug.Log(points);
@@ -67,6 +72,7 @@ public class PointBar : MonoBehaviour
         if (kNote.pointState == true)
         {
             PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             kNote.pointState = false;
             Debug.Log(points);
@@ -74,6 +80,7 @@ public class PointBar : MonoBehaviour
         if (jNote.pointState == true)
         {
             PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             jNote.pointState = false;
             Debug.Log(points);
@@ -81,13 +88,15 @@ public class PointBar : MonoBehaviour
         if (fNote.pointState == true)
         {
             PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             fNote.pointState = false;
             Debug.Log(points);
         }
         if (dNote.pointState == true)
         {
-            PointsCount.points++; 
+            PointsCount.points++;
+            PointsCount.pointsStreak++;
             points++;
             dNote.pointState = false;
             Debug.Log(points);
