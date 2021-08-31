@@ -34,7 +34,7 @@ public class longSpaceNote : MonoBehaviour
         }
 
         /* later aligator
-        if (fixedTimer == 160 && !pointFailed) 
+        if (fixedTimer == 160 && !pointFailed && MainMenu.levelName != "EmptySong") 
         {
             PointBar.points--;
             pointFailed = true;

@@ -32,11 +32,10 @@ public class jNote : MonoBehaviour
             pointState = true;
             this.gameObject.SetActive(false);
         }
-        if (fixedTimer == 160 && !pointFailed) 
+        if (fixedTimer == 160 && !pointFailed && MainMenu.levelName != "EmptySong") 
         {
             PointBar.points--;
             PointsCount.pointsStreak = 0;
-            Debug.Log("it worked");
             pointFailed = true;
         }
     }

@@ -39,11 +39,10 @@ public class dNote : MonoBehaviour
             Debug.Log("it worked");
             pointFailed = true;
         }*/
-        if (fixedTimer == 160 && !pointFailed) 
+        if (fixedTimer == 160 && !pointFailed && MainMenu.levelName != "EmptySong") 
         {
             PointBar.points--;
             PointsCount.pointsStreak = 0;
-            Debug.Log("it worked");
             pointFailed = true;
         }
     }

@@ -35,11 +35,11 @@ public class CreateNewSong : MonoBehaviour
 
     void Awake()
     {
-        jsonPath = Application.streamingAssetsPath + "/EmptySong/notes.json"; // we asign the path of the json file bassed on the streamingAsset folder
+        jsonPath = Application.streamingAssetsPath + "/Songs/EmptySong/notes.json"; // we asign the path of the json file bassed on the streamingAsset folder
 
-        if (!Directory.Exists(Application.streamingAssetsPath + "/EmptySong"))
+        if (!Directory.Exists(Application.streamingAssetsPath + "/Songs/EmptySong"))
         {
-            Directory.CreateDirectory(Application.streamingAssetsPath + "/EmptySong");
+            Directory.CreateDirectory(Application.streamingAssetsPath + "/Songs/EmptySong");
             jsonString = JsonUtility.ToJson(newSongNotes);
             File.WriteAllText(jsonPath, jsonString);
             print("a new empty song folder have been created");
